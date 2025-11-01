@@ -25,4 +25,5 @@ document.addEventListener('DOMContentLoaded', () => {
         navMenu.classList.remove('show');
         dropdownMenu.classList.remove('show');
     });
+    
 });
