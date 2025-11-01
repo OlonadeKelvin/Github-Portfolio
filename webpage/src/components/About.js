@@ -5,7 +5,7 @@ import React from 'react';
 const About = () => {
   return (
     <section id="about" data-aos="fade-in" data-aos-duration="1000">
-      <img src={PROFILE} alt="Olonade Kelvin" className="profile-large" />
+      <img src="/PROFILE.jpg" alt="Kelvin Olonade" className="profile-large" />
       <h1>About Me</h1>
       <p data-aos="fade-up" data-aos-delay="200">
         Olonade Kelvin Mobolaji is a third-year Electrical and Electronics Engineering student at the University of Lagos, Nigeria. 
