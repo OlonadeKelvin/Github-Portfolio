@@ -4,39 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Embedded Systems - Olonade Kelvin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js" defer></script>
 </head>
 <body>
     <header>
         <div class="nav-container">
-            <button id="menu-toggle">☰</button>
+            <h1 class="logo">Kelvin Olonade</h1>
             <nav id="nav-menu">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="embedded.html">Embedded Systems</a></li>
+                    <li><a href="embedded.html">Embedded</a></li>
                     <li><a href="simulations.html">Simulations</a></li>
-                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
+            <div class="profile-dropdown">
+                <img src="pic.jpg" alt="Profile" class="profile-icon" id="profile-toggle">
+                <div class="dropdown-menu" id="dropdown-menu">
+                    <a href="https://linkedin.com/in/yourprofile">LinkedIn</a>
+                    <a href="https://x.com/yourhandle">Twitter/X</a>
+                    <a href="https://instagram.com/yourhandle">Instagram</a>
+                    <p>WhatsApp: +234-123-456-7890</p>
+                    <p>Email: olonadekelvin@email.com</p>
+                    <p>Institutional: kelvin.olonade@unilag.edu.ng</p>
+                </div>
+            </div>
+            <button id="menu-toggle">☰</button>
         </div>
     </header>
     
-    <section id="embedded">
+    <section id="embedded" data-aos="fade-in" data-aos-duration="1000">
         <h1>Embedded Systems Projects</h1>
         <div class="project-grid">
-            <div class="project-card">
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
                 <h2>Sentinel407 Motion-Activated Alarm</h2>
                 <iframe width="100%" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-                <p>Process: Started with STM32CubeIDE HAL, moved to bare-metal Assembly. Key: Interrupts, PWM, UART. Impact: 25% power reduction; custom linker files. <a href="https://github.com/yourusername/Sentinel407">Repo</a></p>
+                <p>STM32F407 with C/Assembly. Impact: 25% power reduction. <a href="https://github.com/yourusername/Sentinel407">Repo</a></p>
             </div>
-            <div class="project-card">
-                <h2>UrbanFloodGuard – Smart Traffic Control</h2>
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                <h2>UrbanFloodGuard</h2>
                 <iframe width="100%" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-                <p>Process: Configurable logic on PIC16F13145, no-code sensors. Impact: Early alerts; IoT integration planned. <a href="https://github.com/yourusername/UrbanFloodGuard">Repo</a></p>
+                <p>PIC16F13145 sensor system. Impact: Early alerts. <a href="https://github.com/yourusername/UrbanFloodGuard">Repo</a></p>
             </div>
-            <!-- Add more cards as needed -->
         </div>
     </section>
     

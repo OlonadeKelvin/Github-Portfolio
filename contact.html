@@ -3,41 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Olonade Kelvin</title>
+    <title>About - Olonade Kelvin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js" defer></script>
 </head>
 <body>
     <header>
         <div class="nav-container">
-            <button id="menu-toggle">☰</button>
+            <h1 class="logo">Kelvin Olonade</h1>
             <nav id="nav-menu">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="embedded.html">Embedded Systems</a></li>
+                    <li><a href="embedded.html">Embedded</a></li>
                     <li><a href="simulations.html">Simulations</a></li>
-                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
+            <div class="profile-dropdown">
+                <img src="pic.jpg" alt="Profile" class="profile-icon" id="profile-toggle">
+                <div class="dropdown-menu" id="dropdown-menu">
+                    <a href="https://linkedin.com/in/yourprofile">LinkedIn</a>
+                    <a href="https://x.com/yourhandle">Twitter/X</a>
+                    <a href="https://instagram.com/yourhandle">Instagram</a>
+                    <p>WhatsApp: +234 7041877890</p>
+                    <p>Email: olonadekelvin@email.com</p>
+                    <p>Institutional: 230403021@live.@unilag.edu.ng</p>
+                </div>
+            </div>
+            <button id="menu-toggle">☰</button>
         </div>
     </header>
     
-    <section id="contact">
-        <img src="PROFILE.jpg" alt="Olonade Kelvin Profile" class="profile-pic">
-        <h1>Get in Touch</h1>
-        <p>Let's discuss internships, freelance, or collaborations!</p>
-        <div class="contact-info">
-            <p><a href="https://linkedin.com/in/yourprofile">LinkedIn</a></p>
-            <p><a href="https://x.com/yourhandle">Twitter/X</a></p>
-            <p>WhatsApp: +234 7041877890</p>
-            <p>Email: olonadekelvin@email.com</p>
-            <p>Institutional: 230403021@live.@unilag.edu.ng</p>
-        </div>
+    <section id="about" data-aos="fade-in" data-aos-duration="1000">
+        <img src="pic.jpg" alt="Olonade Kelvin" class="profile-large">
+        <h1>About Me</h1>
+        <p data-aos="fade-up" data-aos-delay="200">Third-year EEE student at UNILAG (CGPA 4.2/5.0), aiming for first-class. Freelancer in renewables and EVs. IEEE/SEES leader, mentoring 50+ students. Goals: Internships at Nvidia/Tesla, publish on power systems.</p>
+        <p data-aos="fade-up" data-aos-delay="400">Certifications: ARM Accredited, MATLAB Associate (in progress).</p>
     </section>
     
     <footer>
         <p>&copy; 2025 Olonade Kelvin. Built with GitHub Pages.</p>
     </footer>
-</body>
-</html>

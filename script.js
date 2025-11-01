@@ -1,8 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('nav-menu');
+    AOS.init({
+        duration: 1200,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+    });
     
-    toggle.addEventListener('click', () => {
-        menu.classList.toggle('show');
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    const profileToggle = document.getElementById('profile-toggle');
+    const dropdownMenu = document.getElementById('dropdown-menu');
+    
+    menuToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navMenu.classList.toggle('show');
+    });
+    
+    profileToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dropdownMenu.classList.toggle('show');
+    });
+    
+    document.addEventListener('click', () => {
+        navMenu.classList.remove('show');
+        dropdownMenu.classList.remove('show');
     });
 });
