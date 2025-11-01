@@ -5,26 +5,29 @@ import Home from './components/Home';
 import About from './components/About';
 import Embedded from './components/Embedded';
 import Simulations from './components/Simulations';
-import PROFILE from './assets/PROFILE.jpg'; // Assume assets folder for images
 
 function App() {
   const [dropdownOpen, setDropdownOpen] = React.useState(false);
   const [menuOpen, setMenuOpen] = React.useState(false);
 
-  const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
+  const toggleDropdown = (e) => {
+    e.stopPropagation();
+    setDropdownOpen(!dropdownOpen);
+  };
+
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   React.useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (!event.target.closest('.profile-dropdown')) setDropdownOpen(false);
-      if (!event.target.closest('#menu-toggle') && !event.target.closest('#nav-menu')) setMenuOpen(false);
+    const closeAll = () => {
+      setDropdownOpen(false);
+      setMenuOpen(false);
     };
-    document.addEventListener('click', handleClickOutside);
-    return () => document.removeEventListener('click', handleClickOutside);
+    document.addEventListener('click', closeAll);
+    return () => document.removeEventListener('click', closeAll);
   }, []);
 
   return (
-    <Router>
+    <Router basename="/Github-Portfolio">
       <header>
         <div className="nav-container">
           <h1 className="logo">Kelvin Olonade</h1>
@@ -36,35 +39,44 @@ function App() {
               <li><Link to="/simulations" onClick={() => setMenuOpen(false)}>Simulations</Link></li>
             </ul>
           </nav>
-          <div className="profile-dropdown">
-            <img src={PROFILE} alt="Profile" className="profile-icon" onClick={toggleDropdown} />
+
+          <div className="profile-dropdown" onClick={toggleDropdown}>
+            <img src="/PROFILE.jpg" alt="Profile" className="profile-icon" />
             {dropdownOpen && (
-              <div className="dropdown-menu">
+              <div className="dropdown-menu" onClick={(e) => e.stopPropagation()}>
                 <h3>About Me</h3>
-                <p>Olonade Kelvin Mobolaji is a third-year Electrical and Electronics Engineering student at the University of Lagos, Nigeria, with a CGPA of 4.2/5.0. Passionate about electronics, hardware design, and simulations, I specialize in solving complex problems in embedded systems and power engineering. As Deputy Lead in IEEE and SEES-UNILAG, I mentor students on IoT and EV projects. My goal is to contribute to sustainable technologies through internships at companies like Nvidia or Tesla and research publications in power systems.</p>
-                <h3>Contact Me</h3>
-                <a href="www.linkedin.com/in/olonade-kelvin">LinkedIn</a>
-                <a href="https://x.com/KFactorUnknown">Twitter/X</a>
-                <a href="https://instagram.com/olonade_kelvin_">Instagram</a>
-                <p>WhatsApp: +234 704187780</p>
+                <p>
+                  Olonade Kelvin Mobolaji — 3rd-year EEE student at UNILAG (CGPA 4.2/5.0).<br/>
+                  Passionate about embedded systems, power electronics, and simulations.<br/>
+                  Deputy Lead at IEEE & SEES-UNILAG. Mentor in IoT & EV projects.<br/>
+                  Seeking internships at Nvidia, Tesla, or research in sustainable energy.
+                </p>
+                <h3>Contact</h3>
+                <a href="https://linkedin.com/in/olonade-kelvin" target="_blank" rel="noreferrer">LinkedIn</a>
+                <a href="https://github.com/olonadekelvin" target="_blank" rel="noreferrer">GitHub</a>
+                <a href="https://instagram.com/olonade_kelvin" target="_blank" rel="noreferrer">Instagram</a>
+                <p>WhatsApp: +234 704 187 7890</p>
                 <p>Email: olonadekelvin@email.com</p>
-                <p>Institutional: 230403021@live.unilag.edu.ng</p>
+                <p>UNILAG: 230403021@live.unilag.edu.ng</p>
               </div>
             )}
           </div>
-          <button id="menu-toggle" onClick={toggleMenu}>☰</button>
+
+          <button id="menu-toggle" onClick={toggleMenu}>Menu</button>
         </div>
       </header>
-      
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/embedded" element={<Embedded />} />
-        <Route path="/simulations" element={<Simulations />} />
-      </Routes>
-      
+
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/embedded" element={<Embedded />} />
+          <Route path="/simulations" element={<Simulations />} />
+        </Routes>
+      </main>
+
       <footer>
-        <p>&copy; 2025 Olonade Kelvin. Built with React on GitHub Pages.</p>
+        <p>© 2025 Olonade Kelvin. Built with React + GitHub Pages.</p>
       </footer>
     </Router>
   );
