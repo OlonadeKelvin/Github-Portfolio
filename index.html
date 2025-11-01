@@ -3,40 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Olonade Kelvin's Engineering Portfolio: Embedded Systems and Simulations in Physics, Power, EVs.">
     <title>Olonade Kelvin - Engineering Portfolio</title>
-    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="Embedded_Systems.html">Embedded Systems</a></li>
-                <li><a href="SImulations.html">Simulations</a></li>
-                <li><a href="Contacts.html">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="nav-container">
+            <button id="menu-toggle">☰</button>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="embedded.html">Embedded Systems</a></li>
+                    <li><a href="simulations.html">Simulations</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     
     <section id="intro">
         <h1>Olonade Kelvin Mobolaji</h1>
         <p>Third-Year Electrical and Electronics Engineering Student at University of Lagos (CGPA: 4.2/5.0)</p>
-        <p>Specializing in Embedded Systems and Simulations (Physics, Power, EVs). Freelance Engineer with hands-on projects in microcontrollers, IoT, and MATLAB/Simulink modeling. Passionate about efficient, real-world solutions.</p>
+        <p>Specializing in Embedded Systems and Simulations (Physics, Power, EVs). Freelance Engineer with hands-on projects in microcontrollers, IoT, and MATLAB/Simulink modeling. Passionate about efficient, real-world solutions. Let's build the future of energy and automation.</p>
     </section>
     
     <section id="skills">
         <h2>Skills Overview</h2>
-        <ul>
-            <li>Embedded: STM32, PIC, ARM Cortex-M, C/Assembly, RTOS</li>
-            <li>Simulations: MATLAB, Simulink, Simscape, Numerical Methods, Control Systems</li>
-            <li>Tools: GitHub, Python, Machine Learning Basics</li>
-            <li>Soft: Problem-Solving, Leadership (IEEE/SEES Deputy Lead)</li>
-        </ul>
+        <div class="skills-grid">
+            <div class="skill-card">Embedded: STM32, PIC, ARM Cortex-M, C/Assembly, RTOS</div>
+            <div class="skill-card">Simulations: MATLAB, Simulink, Simscape, Numerical Methods, Control Systems</div>
+            <div class="skill-card">Tools: GitHub, Python, Machine Learning Basics</div>
+            <div class="skill-card">Soft: Problem-Solving, Leadership (IEEE/SEES Deputy Lead)</div>
+        </div>
     </section>
     
     <section id="projects-teaser">
         <h2>Featured Projects</h2>
-        <p>Explore my work in <a href="embedded.html">Embedded Systems</a> (e.g., STM32 alarm with 25% power reduction) or <a href="simulations.html">Simulations</a> (e.g., EV power models validated against NREL data).</p>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Sentinel407 (Embedded)</h3>
+                <p>STM32 alarm with 25% power reduction. <a href="embedded.html">View Details</a></p>
+            </div>
+            <div class="project-card">
+                <h3>Differential Equation Visualizer (Simulations)</h3>
+                <p>MATLAB ODE app with 98% accuracy. <a href="simulations.html">View Details</a></p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="resume">
+        <h2>Resumes</h2>
+        <ul>
+            <li><a href="resume-embedded.pdf" target="_blank">Embedded Systems Resume</a></li>
+            <li><a href="resume-simulations.pdf" target="_blank">Simulations Resume</a></li>
+            <li><a href="resume-allround.pdf" target="_blank">All-Round Engineer Resume</a></li>
+        </ul>
     </section>
     
     <footer>
