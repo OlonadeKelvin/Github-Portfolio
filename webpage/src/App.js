@@ -61,7 +61,7 @@ function App() {
           </div>
           <p><strong>WhatsApp:</strong> +234 704 187 7890</p>
           <p><strong>Gmail:</strong> olonadekelvin@email.com</p>
-          <p><strong>Ourlook:</strong> 230403021@live.unilag.edu.ng</p>
+          <p><strong>Outlook:</strong> 230403021@live.unilag.edu.ng</p>
           <button onClick={() => setShowProfile(false)} className="close-btn">×</button>
         </div>
       )}
