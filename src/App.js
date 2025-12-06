@@ -53,11 +53,11 @@ function App() {
             3rd-year Electrical & Electronics Engineering student at University of Lagos.<br />
             Specializing in embedded systems, power electronics, and simulations.
           </p>
-          
+         
           <div className="contact">
             <a href="https://linkedin.com/in/olonade-kelvin" target="_blank" rel="noreferrer">LinkedIn</a>
             <a href="https://github.com/olonadekelvin" target="_blank" rel="noreferrer">GitHub</a>
-            <a href="https://instagram.com/olonade_kelvin" target="_blank">Instagram</a>
+            <a href="https://instagram.com/olonade_kelvin" target="_blank" rel="noreferrer">>Instagram</a>
           </div>
           <p><strong>WhatsApp:</strong> +234 704 187 7890</p>
           <p><strong>Gmail:</strong> olonadekelvin@email.com</p>
