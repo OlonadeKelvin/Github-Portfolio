@@ -5,44 +5,62 @@ import { Link } from 'react-router-dom';
 const Home = () => {
   return (
     <>
-      <section id="hero" data-aos="fade-in" data-aos-duration="1000">
-        <div className="hero-content">
-          <h1>Welcome to My Portfolio</h1>
-          <p>Exploring Embedded Systems and Simulations for a Sustainable Future</p>
-          <a href="#projects-teaser" className="cta-button">View Projects</a>
+      {/* 1. WELCOME CARD (Uses the Image Texture) */}
+      <section id="hero">
+        <div className="texture-card texture-hero" data-aos="fade-up">
+          <div className="hero-content">
+            <h1>Building the Future<br />with Logic & Power.</h1>
+            <p>Portfolio of Olonade Kelvin. Electrical Engineer specializing in Embedded Systems and Advanced Simulations.</p>
+            <div style={{display: 'flex', gap: '1rem', justifyContent: 'center'}}>
+              <a href="#projects-teaser" className="btn-primary">View Projects</a>
+              <a href="https://github.com/olonadekelvin" className="btn-primary secondary">GitHub</a>
+            </div>
+          </div>
         </div>
       </section>
       
-      <section id="skills" data-aos="fade-up" data-aos-duration="800">
-        <h2>Skills Overview</h2>
-        <div className="skills-grid">
-          <div className="skill-card" data-aos="fade-up" data-aos-delay="100">Electronics & Embedded Systems: Low level Programming(C/Assembly), Micro-controllers and Processors, Communication Protocols, Circuit Design, Fabrication, Internet of Things </div>
-          <div className="skill-card" data-aos="fade-up" data-aos-delay="200">Simulations: Critical Thinking, Algorithmic Thinking, Data Analysis, Programming Languages(Python, MATLAB, C/C++, R)</div>
-          <div className="skill-card" data-aos="fade-up" data-aos-delay="300">Tools: MATLAB, Proteus, Linux, COMSOL, Ansys, Fusion 360, GitHub</div>
-          <div className="skill-card" data-aos="fade-up" data-aos-delay="400">Leadership: IEEE Deputy Lead Electronics Society </div>
-        </div>
-      </section>
-      
-      <section id="projects-teaser" data-aos="fade-in" data-aos-duration="1000">
-        <h2>Featured Projects</h2>
+      {/* 2. SKILLS CARD (Uses CSS Hexagon Pattern) */}
+      <section id="skills" data-aos="fade-up">
+        <h2 className="section-title">Skills Overview</h2>
         <div className="project-grid">
-          <div className="project-card" data-aos="fade-left" data-aos-delay="100">
-            <h3>Sentinel407 (Embedded)</h3>
-            <p>STM32 alarm with 25% power reduction. <Link to="/embedded">Details</Link></p>
+          <div className="texture-card texture-skills">
+            <h3>Embedded Systems</h3>
+            <p className="project-summary">STM32, PIC, ARM Assembly, C/C++, UART/I2C/SPI, Altium, Proteus.</p>
           </div>
-          <div className="project-card" data-aos="fade-right" data-aos-delay="200">
-            <h3>ODE Visualizer (Simulations)</h3>
-            <p>MATLAB app with 98% accuracy. <Link to="/simulations">Details</Link></p>
+          <div className="texture-card texture-skills">
+            <h3>Simulations</h3>
+            <p className="project-summary">MATLAB/Simulink, COMSOL, Ansys, Control Theory, Power Systems Analysis.</p>
+          </div>
+          <div className="texture-card texture-skills">
+            <h3>Tools & OS</h3>
+            <p className="project-summary">Linux (Bash), Git, Vim, Fusion 360, LaTeX.</p>
           </div>
         </div>
       </section>
       
-      <section id="resume" data-aos="fade-up" data-aos-duration="800">
-        <h2>Resumes</h2>
-        <div className="resume-grid">
-          <a href="resume-embedded.pdf" className="resume-card" data-aos="fade-up" data-aos-delay="100">Embedded Systems</a>
-          <a href="resume-simulations.pdf" className="resume-card" data-aos="fade-up" data-aos-delay="200">Simulations</a>
-          <a href="resume-allround.pdf" className="resume-card" data-aos="fade-up" data-aos-delay="300">All-Round</a>
+      {/* 3. PROJECTS & RESUME (Uses CSS Tech Grid Pattern) */}
+      <section id="projects-teaser" data-aos="fade-up">
+        <h2 className="section-title">Featured Work & Resume</h2>
+        <div className="project-grid">
+          {/* Project 1 */}
+          <div className="texture-card texture-projects">
+            <h3>Sentinel407</h3>
+            <p className="project-summary">Bare-metal STM32 security system.</p>
+            <Link to="/embedded" className="btn-primary">View Embedded</Link>
+          </div>
+          
+          {/* Project 2 */}
+          <div className="texture-card texture-projects">
+            <h3>Smart Microgrid</h3>
+            <p className="project-summary">AI-driven power management sim.</p>
+            <Link to="/simulations" className="btn-primary">View Simulations</Link>
+          </div>
+
+          {/* Resume Card */}
+          <a href="/resume.pdf" className="texture-card texture-projects" style={{textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+            <h3 style={{marginBottom: '0'}}>Download Resume</h3>
+            <p style={{color: 'var(--primary)', marginTop: '0.5rem'}}>PDF Format</p>
+          </a>
         </div>
       </section>
     </>

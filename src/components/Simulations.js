@@ -12,7 +12,7 @@ const Simulations = () => {
       id: 1,
       title: "Microgrid & Energy Storage Management System (EMS)",
       status: "in-progress",
-      date: "Dec 2024 - Present",
+      date: "Dec 2025 - Present",
       summary: "Utility-scale grid simulation managing renewable and dispatchable power sources with intelligent frequency and voltage regulation.",
       description: "A comprehensive utility-scale grid simulation that orchestrates three distinct power sources: stochastic generators (Wind/Solar) and dispatchable systems (Diesel/Battery). The system employs adaptive control logic to maintain grid frequency stability at 50/60Hz and regulate voltage during critical events such as load shedding and intermittent cloud cover.",
       features: [
@@ -24,7 +24,7 @@ const Simulations = () => {
       innovation: "Exploring integration of Reinforcement Learning agents via MATLAB's RL Toolbox to replace hard-coded switching logic with adaptive decision-making. Future work includes island mode simulation for disaster recovery scenarios.",
       impact: "Optimizes Levelized Cost of Energy by 22%; maintains frequency stability within ±0.5Hz during extreme load variations; validates battery capacity for 99.9% uptime guarantee.",
       tech: ["MATLAB/Simulink", "Power Systems Analysis", "Control Theory", "RL Toolbox"],
-      github: "https://github.com/yourusername/microgrid-ems",
+      github: null,
       video: null
     },
     {
@@ -43,7 +43,7 @@ const Simulations = () => {
       innovation: "Implements state-space control techniques commonly found in autonomous vehicles, two-wheeled robots, and drone stabilization systems.",
       impact: "Demonstrates fundamental control concepts applicable to robotics and automation; achieves sub-second stabilization response times.",
       tech: ["MATLAB/Simulink", "Control Systems", "State-Space Analysis", "LQR/PID"],
-      github: "https://github.com/yourusername/inverted-pendulum",
+      github: "https://github.com/OlonadeKelvin/MATLAB_Projects/tree/main/Simulink/Self-Balancing",
       video: null
     },
     {
@@ -62,8 +62,8 @@ const Simulations = () => {
       innovation: "Bridges the gap between theoretical differential equations and practical system behavior through interactive visualization.",
       impact: "Provides 98% numerical accuracy compared to analytical solutions; reduces learning curve for complex ODE systems.",
       tech: ["MATLAB App Designer", "Numerical Methods", "UI/UX Design", "ODE Solvers"],
-      github: "https://github.com/yourusername/ode-visualizer",
-      fileexchange: "https://www.mathworks.com/matlabcentral/fileexchange/your-id"
+      github: "https://github.com/OlonadeKelvin/MATLAB_Projects/tree/main/APP%20Development",
+      fileexchange: "https://www.mathworks.com/matlabcentral/fileexchange/181160-differential_equation_visualizer"
     }
   ];
 
@@ -77,12 +77,11 @@ const Simulations = () => {
             className="project-card" 
             data-aos="fade-up" 
             data-aos-delay={idx * 100}
+            onClick={() => toggleProject(project.id)} // 1. Click handler on parent
+            style={{ cursor: 'pointer' }} // Visual cue
           >
             <div className="project-header">
-              <h2 
-                onClick={() => toggleProject(project.id)} 
-                className="project-title"
-              >
+              <h2 className="project-title">
                 {project.title}
               </h2>
               {project.status === 'in-progress' && (
@@ -102,6 +101,7 @@ const Simulations = () => {
                     frameBorder="0"
                     allowFullScreen
                     title={project.title}
+                    style={{ marginBottom: '1rem' }}
                   ></iframe>
                 )}
 
@@ -142,6 +142,7 @@ const Simulations = () => {
                       className="project-link"
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()} // 2. Stop propagation
                     >
                       View on GitHub
                     </a>
@@ -152,6 +153,7 @@ const Simulations = () => {
                       className="project-link secondary"
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()} // 2. Stop propagation
                     >
                       MATLAB File Exchange
                     </a>

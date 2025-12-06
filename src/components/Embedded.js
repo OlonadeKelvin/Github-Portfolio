@@ -12,7 +12,7 @@ const Embedded = () => {
       id: 1,
       title: "Sentinel407 - Motion-Activated Alarm System",
       status: "in-progress",
-      date: "Aug 2024 - Present",
+      date: "October 2025 - Present",
       summary: "Ground-up bare-metal alarm system on STM32F407, progressing from HAL to full ARM Assembly implementation.",
       description: "A three-phase embedded systems project demonstrating progressive mastery of ARM Cortex-M4 architecture. Starting with STM32CubeIDE and HAL drivers, the project transitions through register-level C programming and culminates in a complete bare-metal implementation using pure ARM Assembly with custom startup code and linker scripts.",
       features: [
@@ -31,14 +31,14 @@ const Embedded = () => {
       innovation: "Custom startup and linker files eliminate dependency on vendor libraries. Entirely self-contained firmware demonstrating deep understanding of microcontroller initialization, memory mapping, and interrupt vector tables.",
       impact: "Achieved 25% power reduction through optimized sleep mode implementation; sub-millisecond interrupt response times; complete hardware abstraction layer replacement.",
       tech: ["ARM Cortex-M4", "STM32F407", "ARMv7 Assembly", "C", "Vim", "Makefile", "OpenOCD", "GCC Toolchain"],
-      github: "https://github.com/yourusername/sentinel407",
+      github: null,
       video: null
     },
     {
       id: 2,
       title: "UrbanFloodGuard - Smart Flood Detection System",
       status: "completed",
-      date: "Jul 2024",
+      date: "Jul 2025",
       summary: "No-code flood monitoring system using PIC16F13145 configurable logic blocks with multi-level alert mechanism.",
       description: "A hardware-centric flood detection solution leveraging the PIC16F13145's Configurable Logic Blocks (CLBs) to implement signal processing and decision logic without traditional software. The system uses capacitive water level sensors to provide graduated alerts through LED indicators, enabling early intervention during flooding events.",
       features: [
@@ -51,8 +51,8 @@ const Embedded = () => {
       innovation: "Demonstrates advanced digital logic design using hardware-only implementation. Planned IoT dashboard integration will enable remote monitoring and historical data analytics.",
       impact: "Provides early warning alerts enabling 15-30 minute response windows; eliminates software debugging overhead through pure hardware logic.",
       tech: ["PIC16F13145", "Configurable Logic Blocks", "Capacitive Sensing", "Digital Logic Design", "Circuit Design"],
-      github: "https://github.com/yourusername/urbanfloodguard",
-      video: "https://www.youtube.com/embed/YOUR_VIDEO_ID"
+      github: null,
+      video: "https://www.youtube.com/embed/SLURRuQGh4o"
     }
   ];
 
@@ -66,12 +66,11 @@ const Embedded = () => {
             className="project-card" 
             data-aos="fade-up" 
             data-aos-delay={idx * 100}
+            onClick={() => toggleProject(project.id)} // 1. Click handler moved here
+            style={{ cursor: 'pointer' }} // Visual cue that card is clickable
           >
             <div className="project-header">
-              <h2 
-                onClick={() => toggleProject(project.id)} 
-                className="project-title"
-              >
+              <h2 className="project-title">
                 {project.title}
               </h2>
               {project.status === 'in-progress' && (
@@ -91,6 +90,7 @@ const Embedded = () => {
                     frameBorder="0"
                     allowFullScreen
                     title={project.title}
+                    style={{ marginBottom: '1rem' }}
                   ></iframe>
                 )}
 
@@ -142,6 +142,7 @@ const Embedded = () => {
                       className="project-link"
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()} // 2. Prevents card from closing when clicking link
                     >
                       View on GitHub
                     </a>
