@@ -64,7 +64,7 @@ function App() {
             <a href="https://linkedin.com/in/olonade-kelvin" target="_blank" rel="noreferrer">LinkedIn</a>
             <a href="https://github.com/olonadekelvin" target="_blank" rel="noreferrer">GitHub</a>
             {/* Fixed typo: removed '>' before Instagram */}
-            <a href="https://instagram.com/olonade_kelvin" target="_blank" rel="noreferrer">Instagram</a>
+            <a href="https://instagram.com/olonade_kelvin_" target="_blank" rel="noreferrer">Instagram</a>
           </div>
           
           <div className="contact-info">

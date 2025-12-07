@@ -12,7 +12,12 @@ const Home = () => {
             <h1>Building the Future<br />with Logic & Power.</h1>
             <p>Portfolio of Olonade Kelvin. Electrical Engineer specializing in Embedded Systems and Advanced Simulations.</p>
             <div style={{display: 'flex', gap: '1rem', justifyContent: 'center'}}>
-              <a href="#projects-teaser" className="btn-primary">View Projects</a>
+              <button 
+  className="btn-primary" 
+  onClick={() => document.getElementById('projects-teaser').scrollIntoView({ behavior: 'smooth' })}
+>
+  View Projects
+</button>
               <a href="https://github.com/olonadekelvin" className="btn-primary secondary">GitHub</a>
             </div>
           </div>
