@@ -1,38 +1,114 @@
+/* === APP.CSS - PORTFOLIO OPTIMIZED === */
+
 .App {
-  text-align: center;
+  min-height: 100vh;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Smooth page transitions */
+.App > * {
+  animation: fadeIn 0.4s ease-out;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Remove default React styles */
+.App-logo {
+  display: none;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  display: none;
 }
 
 .App-link {
-  color: #61dafb;
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.App-link:hover {
+  color: var(--primary-light);
+  text-decoration: underline;
+}
+
+/* Loading state */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+}
+
+/* Error boundary */
+.error-boundary {
+  text-align: center;
+  padding: 4rem 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.error-boundary h1 {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.error-boundary p {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+/* Utility classes */
+.text-center {
+  text-align: center;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+/* Print styles */
+@media print {
+  .App {
+    background: white;
+  }
+  
+  header,
+  .menu-toggle,
+  .profile-trigger,
+  footer {
+    display: none;
   }
 }
