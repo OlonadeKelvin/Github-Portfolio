@@ -1,10 +1,11 @@
 // src/App.js
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+// CHANGED: Switched to HashRouter to fix GitHub Pages 404 refresh errors
+import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './components/Home';
 import Embedded from './components/Embedded';
 import Simulations from './components/Simulations';
-import PROFILE from './assets/PROFILE.jpg'; // IMPORT HERE
+import PROFILE from './assets/PROFILE.jpg';
 
 function App() {
   const [showProfile, setShowProfile] = React.useState(false);
@@ -22,7 +23,8 @@ function App() {
   }, []);
 
   return (
-    <Router basename="/Github-Portfolio">
+    // CHANGED: Removed basename (HashRouter handles it automatically)
+    <Router>
       <header>
         <div className="nav-container">
           <h1 className="logo">Kelvin Olonade</h1>
@@ -39,7 +41,11 @@ function App() {
           </div>
 
           <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
-            Menu
+            <div className="menu-icon">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
           </button>
         </div>
       </header>
@@ -49,7 +55,7 @@ function App() {
         <div className="profile-modal" onClick={(e) => e.stopPropagation()}>
           <img src={PROFILE} alt="Kelvin" className="modal-photo" />
           <h2>Olonade Kelvin Mobolaji</h2>
-          <p>
+          <p className="profile-bio">
             3rd-year Electrical & Electronics Engineering student at University of Lagos.<br />
             Specializing in embedded systems, power electronics, and simulations.
           </p>
@@ -57,14 +63,22 @@ function App() {
           <div className="contact">
             <a href="https://linkedin.com/in/olonade-kelvin" target="_blank" rel="noreferrer">LinkedIn</a>
             <a href="https://github.com/olonadekelvin" target="_blank" rel="noreferrer">GitHub</a>
-            <a href="https://instagram.com/olonade_kelvin" target="_blank" rel="noreferrer">>Instagram</a>
+            {/* Fixed typo: removed '>' before Instagram */}
+            <a href="https://instagram.com/olonade_kelvin" target="_blank" rel="noreferrer">Instagram</a>
           </div>
-          <p><strong>WhatsApp:</strong> +234 704 187 7890</p>
-          <p><strong>Gmail:</strong> olonadekelvin@email.com</p>
-          <p><strong>Outlook:</strong> 230403021@live.unilag.edu.ng</p>
+          
+          <div className="contact-info">
+            <p><strong>WhatsApp:</strong> +234 704 187 7890</p>
+            <p><strong>Gmail:</strong> olonadekelvin@email.com</p>
+            <p><strong>Outlook:</strong> 230403021@live.unilag.edu.ng</p>
+          </div>
+          
           <button onClick={() => setShowProfile(false)} className="close-btn">×</button>
         </div>
       )}
+
+      {/* ADDED: Minimal modal backdrop for better UI */}
+      {showProfile && <div className="modal-backdrop"></div>}
 
       <main>
         <Routes>
@@ -75,11 +89,13 @@ function App() {
       </main>
 
       <footer>
-        <p>© 2025 Olonade Kelvin</p>
+        <div className="footer-content">
+          <p>© 2025 Olonade Kelvin</p>
+          <p className="footer-tagline">Engineered with Precision</p>
+        </div>
       </footer>
     </Router>
   );
 }
 
 export default App;
-            

@@ -57,7 +57,14 @@ const Home = () => {
           </div>
 
           {/* Resume Card */}
-          <a href="/resume.pdf" className="texture-card texture-projects" style={{textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+          <a 
+            href={process.env.PUBLIC_URL + "/Resume_OlonadeKelvin.pdf"} 
+            download="Resume_OlonadeKelvin.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="texture-card texture-projects" 
+            style={{textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}
+          >
             <h3 style={{marginBottom: '0'}}>Download Resume</h3>
             <p style={{color: 'var(--primary)', marginTop: '0.5rem'}}>PDF Format</p>
           </a>
