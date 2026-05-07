@@ -947,8 +947,19 @@ button { font-family: inherit; }
 }
 
 /* Footer / CTA */
-.proj-card__footer { margin-top: auto; }
-.proj-card__cta    { width: 100%; justify-content: center; }
+.proj-card__footer {
+  margin-top: auto;
+  display: flex;
+  gap: var(--s3); /* Adds nice spacing between buttons */
+  flex-wrap: wrap; /* Prevents squishing on very small phones */
+}
+
+.proj-card__cta {
+  flex: 1; /* Makes buttons grow equally to fill the space */
+  justify-content: center;
+  text-align: center;
+  min-width: 140px; /* Keeps them from getting too thin */
+}
 
 /* ──────────────────────────────────────────
    12. CONTACT SECTION

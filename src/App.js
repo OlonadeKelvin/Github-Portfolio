@@ -341,22 +341,38 @@ function ProjectCard({ project }) {
         ))}
       </div>
 
-      {/* CTA */}
+{/* CTA */}
       <div className="proj-card__footer">
-        <a
-          href={project.primaryLink}
-          target={isExternal ? "_blank" : undefined}
-          rel={isExternal ? "noreferrer" : undefined}
-          className={`btn btn-sm ${featured ? "btn-primary" : "btn-outline"} proj-card__cta`}
-          aria-label={`${project.primaryActionText} — ${project.title}`}
-        >
-          {project.primaryActionText}
-          <span className="btn-arrow" aria-hidden="true">→</span>
-        </a>
+        {project.primaryLink && (
+          <a
+            href={project.primaryLink}
+            target={isExternal ? "_blank" : undefined}
+            rel={isExternal ? "noreferrer" : undefined}
+            className={`btn btn-sm ${featured ? "btn-primary" : "btn-outline"} proj-card__cta`}
+            aria-label={`${project.primaryActionText} — ${project.title}`}
+          >
+            {project.primaryActionText}
+            <span className="btn-arrow" aria-hidden="true">→</span>
+          </a>
+        )}
+
+        {/* Render secondary link if it exists in data.js */}
+        {project.secondaryLink && (
+          <a
+            href={project.secondaryLink}
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn-sm btn-outline proj-card__cta"
+            aria-label={`${project.secondaryActionText} — ${project.title}`}
+          >
+            {project.secondaryActionText}
+          </a>
+        )}
       </div>
     </article>
   );
 }
+
 
 /* ═══════════════════════════════════════════
    PROJECTS
