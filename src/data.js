@@ -124,7 +124,7 @@ export const projects = [
     id: 1,
     title: "Synthesizable UART TX/RX IP Core",
     category: "RTL / Digital Design",
-    featured: true,
+    featured: false,
     status: "Complete",
     description:
       "Designed a complete, production-quality UART transceiver in synthesizable Verilog HDL. Implemented configurable baud-rate generation, start/stop-bit framing, and parity logic using a clean, latch-free FSM architecture. GTKWave waveform analysis to guarantee cycle-accurate, protocol-compliant data transmission across all operating conditions and edge cases.",
@@ -193,4 +193,25 @@ export const projects = [
     primaryLink: "https://drive.google.com/file/d/1sfh2W0jyKlL2Ujsoo_ScYafBcoCoqRog/view?usp=drive_link&usp=embed_facebook",
     primaryActionText: "View Demo",
   },
+  {
+  id: 5,
+  title: "Autonomous VGA Algorithmic Synthesizer ASIC",
+  category: "ASIC Design",
+  featured: true,
+  status: "In Progress",
+  description:
+    "Pushed the limits of pure hardware creativity by designing and submitting a fully autonomous generative video synthesizer to Tiny Tapeout SKU26A (SkyWater 130nm). This compact ASIC renders evolving mathematical fractals in real-time directly to a 640x480 VGA display using zero software, zero RAM, and zero microcontrollers, only raw digital logic.",
+  highlights: [
+    "SkyWater 130nm submission via Tiny Tapeout (SKU26A)",
+    "From-scratch VGA timing generator delivering clean 640x480@60Hz",
+    "Purely combinatorial 8-mode fractal render engine built on bitwise XOR/shift magic",
+    "16-bit LFSR state machine for autonomous visual mutation every ~1 second",
+    "Extreme area optimization — squeezed into a single 1×1 Tiny Tapeout tile"
+  ],
+  tags: ["Verilog", "ASIC", "Tiny Tapeout", "SkyWater 130nm", "VGA", "Combinatorial Logic", "LFSR", "Demoscene", "Generative Art", "cocotb"],
+  primaryLink: "https://github.com/OlonadeKelvin/DemosceneTTSKY",
+  primaryActionText: "View Full Project",
+  secondaryLink: "https://olonadekelvin.github.io/DemosceneTTSKY/",
+  secondaryActionText: "View Design"
+},
 ];
