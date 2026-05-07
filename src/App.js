@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { personalInfo, skillGroups, projects } from "./data";
 import "./styles.css";
-import profilePic from './assets/PROFILE.jpg';
+import profilePic from './assets/PROFILE.png';
 
 /* ═══════════════════════════════════════════
    NAVBAR
