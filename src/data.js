@@ -190,7 +190,7 @@ export const projects = [
       "Discrete configurable logic blocks only",
     ],
     tags: ["Digital Logic", "Hardware Design", "Sensors", "Deterministic", "Combinational Logic"],
-    primaryLink: "https://drive.google.com/file/d/1sfh2W0jyKlL2Ujsoo_ScYafBcoCoqRog/view?usp=drive_link&usp=embed_facebook",
+    primaryLink: "https://youtube.com/shorts/SLURRuQGh4o?si=Jw9fgmtipO57srMM",
     primaryActionText: "View Demo",
   },
   {
