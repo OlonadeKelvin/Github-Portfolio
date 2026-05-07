@@ -102,6 +102,17 @@ export const skillGroups = [
       "German (Elementary — A1)",
     ],
   },
+  {{
+    category: "Soft Skills",
+    icon: "✦", 
+    skills: [
+      "Problem Solving & Analytical Thinking",
+      "Effective Communication",
+      "Team Collaboration & Leadership",
+      "Adaptability & Continuous Learning",
+      "Time Management",
+    ],
+  },
 ];
 
 // Flat array — legacy export (backward compat)
