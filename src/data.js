@@ -102,7 +102,7 @@ export const skillGroups = [
       "German (Elementary — A1)",
     ],
   },
-  {{
+  {
     category: "Soft Skills",
     icon: "✦", 
     skills: [
