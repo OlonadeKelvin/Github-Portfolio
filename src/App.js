@@ -106,7 +106,7 @@ function Navbar({ menuOpen, setMenuOpen }) {
 		      Download Resume
 		    </a>
 		  </div>
-		</> {/* 4. Add this closing fragment */}
+		</>
 	  );
 }
 
