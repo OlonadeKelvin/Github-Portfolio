@@ -23,91 +23,91 @@ function Navbar({ menuOpen, setMenuOpen }) {
     { href: "#contact",  label: "Contact"  },
   ];
 
-	return (
-		<> {/* 1. Add this opening fragment */}
-		  <nav
-		    className={`navbar${scrolled ? " navbar--scrolled" : ""}`}
-		    role="navigation"
-		    aria-label="Primary navigation"
-		  >
-		    <div className="navbar__inner">
-		      {/* Logo */}
-		      <a href="#hero" className="navbar__logo" aria-label="Back to top — Kelvin Olonade">
-		        <span className="navbar__logo-text">K. Olonade</span>
-		        <span className="navbar__logo-dot" aria-hidden="true">.</span>
-		      </a>
+  return (
+    <>
+      <nav
+        className={`navbar${scrolled ? " navbar--scrolled" : ""}`}
+        role="navigation"
+        aria-label="Primary navigation"
+      >
+        <div className="navbar__inner">
+          {/* Logo */}
+          <a href="#hero" className="navbar__logo" aria-label="Back to top — Kelvin Olonade">
+            <span className="navbar__logo-text">K. Olonade</span>
+            <span className="navbar__logo-dot" aria-hidden="true">.</span>
+          </a>
 
-		      {/* Desktop links */}
-		      <ul className="navbar__links">
-		        {navLinks.map(({ href, label }) => (
-		          <li key={href}>
-		            <a href={href} className="navbar__link">{label}</a>
-		          </li>
-		        ))}
-		      </ul>
+          {/* Desktop links */}
+          <ul className="navbar__links">
+            {navLinks.map(({ href, label }) => (
+              <li key={href}>
+                <a href={href} className="navbar__link">{label}</a>
+              </li>
+            ))}
+          </ul>
 
-		      {/* Persistent resume CTA */}
-		      <a
-		        href={process.env.PUBLIC_URL + '/Resume_OlonadeKelvin.pdf'}
-		        download="Olonade_Kelvin_Resume.pdf"
-		        target="_blank"
-		        rel="noreferrer"
-		        className="btn btn-accent btn-sm navbar__resume"
-		        aria-label="Download Resume PDF"
-		      >
-		        Download CV
-		      </a>
+          {/* Persistent resume CTA */}
+          <a
+            href={process.env.PUBLIC_URL + '/Resume_OlonadeKelvin.pdf'}
+            download="Olonade_Kelvin_Resume.pdf"
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn-accent btn-sm navbar__resume"
+            aria-label="Download Resume PDF"
+          >
+            Download CV
+          </a>
 
-		      {/* Hamburger — mobile only */}
-		      <button
-		        className={`hamburger${menuOpen ? " hamburger--open" : ""}`}
-		        onClick={() => setMenuOpen((o) => !o)}
-		        aria-expanded={menuOpen}
-		        aria-controls="mobile-menu"
-		        aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
-		      >
-		        <span aria-hidden="true" />
-		        <span aria-hidden="true" />
-		        <span aria-hidden="true" />
-		      </button>
-		    </div>
-		  </nav> {/* 2. CLOSE THE NAV TAG HERE */}
+          {/* Hamburger — mobile only */}
+          <button
+            className={`hamburger${menuOpen ? " hamburger--open" : ""}`}
+            onClick={() => setMenuOpen((o) => !o)}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
+            aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+          >
+            <span aria-hidden="true" />
+            <span aria-hidden="true" />
+            <span aria-hidden="true" />
+          </button>
+        </div>
+      </nav>
 
-		  {/* 3. The mobile menu now sits safely OUTSIDE the nav */}
-		  <div
-		    id="mobile-menu"
-		    className={`mobile-menu${menuOpen ? " mobile-menu--open" : ""}`}
-		    aria-hidden={!menuOpen}
-		    role="dialog"
-		    aria-modal="true"
-		    aria-label="Navigation menu"
-		  >
-		    <ul className="mobile-menu__list">
-		      {navLinks.map(({ href, label }) => (
-		        <li key={href}>
-		          <a
-		            href={href}
-		            className="mobile-menu__link"
-		            onClick={() => setMenuOpen(false)}
-		          >
-		            {label}
-		          </a>
-		        </li>
-		      ))}
-		    </ul>
-		    <a
-		      href={process.env.PUBLIC_URL + '/Resume_OlonadeKelvin.pdf'}
-		      download="Olonade_Kelvin_Resume.pdf"
-		      target="_blank"
-		      rel="noreferrer"
-		      className="btn btn-accent btn-lg mobile-menu__cta"
-		      onClick={() => setMenuOpen(false)}
-		    >
-		      Download Resume
-		    </a>
-		  </div>
-		</>
-	  );
+      {/* Mobile fullscreen overlay - NOW SAFELY OUTSIDE THE NAV TAG */}
+      <div
+        id="mobile-menu"
+        className={`mobile-menu${menuOpen ? " mobile-menu--open" : ""}`}
+        aria-hidden={!menuOpen}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Navigation menu"
+      >
+        <ul className="mobile-menu__list">
+          {navLinks.map(({ href, label }) => (
+            <li key={href}>
+              <a
+                href={href}
+                className="mobile-menu__link"
+                onClick={() => setMenuOpen(false)}
+              >
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <a
+          href={process.env.PUBLIC_URL + '/Resume_OlonadeKelvin.pdf'}
+          download="Olonade_Kelvin_Resume.pdf"
+          target="_blank"
+          rel="noreferrer"
+          className="btn btn-accent btn-lg mobile-menu__cta"
+          onClick={() => setMenuOpen(false)}
+        >
+          Download Resume
+        </a>
+      </div>
+    </>
+  );
 }
 
 /* ═══════════════════════════════════════════
