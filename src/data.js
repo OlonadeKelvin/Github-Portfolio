@@ -193,25 +193,48 @@ export const projects = [
     primaryLink: "https://youtube.com/shorts/SLURRuQGh4o?si=Jw9fgmtipO57srMM",
     primaryActionText: "View Demo",
   },
+    {
+    id: 5,
+    title: "Autonomous VGA Algorithmic Synthesizer ASIC",
+    category: "ASIC Design",
+    featured: false,   // changed from true – new project is featured now
+    status: "In Progress",
+    description:
+      "Pushed the limits of pure hardware creativity by designing and submitting a fully autonomous generative video synthesizer to Tiny Tapeout SKU26A (SkyWater 130nm). This compact ASIC renders evolving mathematical fractals in real-time directly to a 640x480 VGA display using zero software, zero RAM, and zero microcontrollers, only raw digital logic.",
+    highlights: [
+      "SkyWater 130nm submission via Tiny Tapeout (SKU26A)",
+      "From-scratch VGA timing generator delivering clean 640x480@60Hz",
+      "Purely combinatorial 8-mode fractal render engine built on bitwise XOR/shift magic",
+      "16-bit LFSR state machine for autonomous visual mutation every ~1 second",
+      "Extreme area optimization — squeezed into a single 1×1 Tiny Tapeout tile"
+    ],
+    tags: ["Verilog", "ASIC", "Tiny Tapeout", "SkyWater 130nm", "VGA", "Combinatorial Logic", "LFSR", "Demoscene", "Generative Art", "cocotb"],
+    primaryLink: "https://github.com/OlonadeKelvin/DemosceneTTSKY",
+    primaryActionText: "View Full Project",
+    secondaryLink: "https://olonadekelvin.github.io/DemosceneTTSKY/",
+    secondaryActionText: "View Design"
+  },
   {
-  id: 5,
-  title: "Autonomous VGA Algorithmic Synthesizer ASIC",
-  category: "ASIC Design",
-  featured: true,
-  status: "In Progress",
-  description:
-    "Pushed the limits of pure hardware creativity by designing and submitting a fully autonomous generative video synthesizer to Tiny Tapeout SKU26A (SkyWater 130nm). This compact ASIC renders evolving mathematical fractals in real-time directly to a 640x480 VGA display using zero software, zero RAM, and zero microcontrollers, only raw digital logic.",
-  highlights: [
-    "SkyWater 130nm submission via Tiny Tapeout (SKU26A)",
-    "From-scratch VGA timing generator delivering clean 640x480@60Hz",
-    "Purely combinatorial 8-mode fractal render engine built on bitwise XOR/shift magic",
-    "16-bit LFSR state machine for autonomous visual mutation every ~1 second",
-    "Extreme area optimization — squeezed into a single 1×1 Tiny Tapeout tile"
-  ],
-  tags: ["Verilog", "ASIC", "Tiny Tapeout", "SkyWater 130nm", "VGA", "Combinatorial Logic", "LFSR", "Demoscene", "Generative Art", "cocotb"],
-  primaryLink: "https://github.com/OlonadeKelvin/DemosceneTTSKY",
-  primaryActionText: "View Full Project",
-  secondaryLink: "https://olonadekelvin.github.io/DemosceneTTSKY/",
-  secondaryActionText: "View Design"
-},
+    id: 6,
+    title: "Hardware EEPROM Wear‑Leveling Controller",
+    category: "ASIC Design",
+    featured: true,      // new featured project
+    status: "Complete",
+    description:
+      "A tiny, attack‑resistant wear‑leveling controller that dramatically extends the lifetime of external EEPROM and flash memories. Implements the Start‑Gap algorithm (used in commercial 3D‑XPoint) with a 2‑round Feistel address scrambler, saturating wear counters, automatic bad‑block retirement, and in‑band telemetry. Passed all cocotb tests and successfully taped out on SkyWater 130nm via Tiny Tapeout (SKY26a).",
+    highlights: [
+      "Start‑Gap wear leveling – proven, table‑free algorithm",
+      "2‑round Feistel scrambler + LFSR key – defeats targeted wear attacks",
+      "Automatic bad‑block retirement – saturated blocks are skipped",
+      "Saturating 8‑bit wear counters per logical block – ultra‑compact",
+      "In‑band telemetry – read max‑min skew or total write count",
+      "Fully synthesizable, passes all simulation tests",
+      "Successful GDS generation – placed & routed on SKY130"
+    ],
+    tags: ["Verilog", "ASIC", "Tiny Tapeout", "SkyWater 130nm", "Wear Leveling", "Start‑Gap", "Feistel", "RTL Design", "cocotb", "VLSI"],
+    primaryLink: "https://github.com/OlonadeKelvin/EEPROM_Wear",
+    primaryActionText: "View Full Project",
+    secondaryLink: "https://olonadekelvin.github.io/EEPROM_Wear/",
+    secondaryActionText: "View Design"
+  }
 ];
