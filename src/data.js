@@ -198,7 +198,7 @@ export const projects = [
     title: "Autonomous VGA Algorithmic Synthesizer ASIC",
     category: "ASIC Design",
     featured: false,   // changed from true – new project is featured now
-    status: "In Progress",
+    status: "Complete",
     description:
       "Pushed the limits of pure hardware creativity by designing and submitting a fully autonomous generative video synthesizer to Tiny Tapeout SKU26A (SkyWater 130nm). This compact ASIC renders evolving mathematical fractals in real-time directly to a 640x480 VGA display using zero software, zero RAM, and zero microcontrollers, only raw digital logic.",
     highlights: [
