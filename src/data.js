@@ -96,7 +96,6 @@ export const skillGroups = [
       "SkyWater SKY130",
       "IHP SG13G2 / SG13CMOS5L (130nm)",
       "GlobalFoundries GF180MCU",
-      "Tiny Tapeout Shuttle Flows",
     ],
   },
   {
