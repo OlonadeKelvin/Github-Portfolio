@@ -3,59 +3,68 @@
 
 export const personalInfo = {
   name: "Kelvin Olonade",
-  role: "RTL Design & Verification Engineer",
-  usp: "Bridging foundational device physics with high-performance RTL design — from breadboards to synthesizable IP cores, built from first principles.",
+  role: "Mixed-Signal & Digital IC Designer",
+  usp: "From breadboards to GDS. Two chips through the full open-source flow on SkyWater 130nm, and now drawing transistors in IHP 130nm and GF180MCU.",
   location: "Lagos, Nigeria",
   university: "University of Lagos",
-
+ 
   contacts: {
-    email:    "olonadekelvin@email.com",
+    email:    "olonadekelvin@gmail.com",
     linkedin: "https://linkedin.com/in/olonade-kelvin",
     github:   "https://github.com/olonadekelvin",
     whatsapp: "+2347041877890",
   },
-
+ 
   stats: [
-    { value: "3+",   label: "RTL Projects"     },
-    { value: "100%", label: "Synthesizable RTL" },
-  //  { value: "IEEE", label: "SSCS Founder"      },
-    { value: "ASIC", label: "Full Flow"         },
+    { value: "2",          label: "Chips Taped Out" },
+    { value: "4",          label: "Chips In Design" },
+    { value: "RTL to GDS", label: "Open-Source Flow" },
   ],
 
   about: `My engineering journey began with a soldering iron and hot glue.
 
-Before I ever used a breadboard, I was taking things apart and putting them back together. I learnt by soldering components, improvising mounts with hot glue, figuring out how those tiny parts on the green board worked through trial and error.
+Before I ever used a breadboard, I was taking things apart and putting them back together. I learnt by soldering components, improvising mounts with hot glue, figuring out how those tiny parts on the green board (PCB) worked through trial and error.
 
-That hands‑on start taught me resourcefulness.
+That hands‑on start taught me a bit about resourcefulness.
 
-Then came an interview where someone asked about breadboards. I'd never formally encountered one. So I asked what it was, and they told me. Then I asked what other boards came before the green board. I learnt about Vero board, perf board, and one more I can't seem to remember — maybe in a next interview. That moment pushed me from raw improvisation into structured learning.
+A later time, I was in an interview, though not formal and was asked about breadboards. I've not encountered one before. So I asked what it was, and they told me. Then I asked what other boards came before the final green board. I learnt about Vero board, perf board, and one more I can't seem to remember. That moment pushed me from raw improvisation into structured learning.
 
-From there, while trying to get a feel for different areas, I went to what I thought was the coolest software: MATLAB. Played with it for as long as I can remember. Saved up for my first STM32 board. Read datasheets selectively. When microcontroller programming started feeling too high‑level, I went lower — into digital logic, Verilog, and RTL design.
-
-What I've built since:
-
-    A synthesizable UART IP core
-
-    A thermal simulator for multi‑core processor architectures
-
-    A firmware‑free flood monitoring system using only configurable logic blocks — no software, no failure points, just hardware
-
-Today I'm working through the full ASIC design flow, from RTL synthesis to static timing analysis. I'm also helping start the first IEEE SSCS Student Chapter at the University of Lagos.
-
+From there, while trying to get a feel for different areas, I went to what I thought was the coolest software: MATLAB. Played with it for as long as I can remember. Saved up for my first STM32 board. Read datasheets selectively. Then microcontroller programming started feeling too high‑level, I went lower, into digital logic, Verilog, and RTL design.
+ 
+Two of my designs have been through the full open-source ASIC flow and taped out on SkyWater 130nm, a generative VGA synthesizer and an EEPROM wear-leveling controller, both carried from RTL to GDS. Seeing my own layout come back as a real GDS file was the point where the analog side stopped looking like someone else's job.
+ 
+So now I draw transistors too. Right now I'm finishing a temperature-sensor front end in IHP 130nm for a HeiChips tapeout this September, where a bad first guess at the input stage cost me about 2.5 °C of accuracy, finding out why and fixing it properly bought back a 26× improvement. I'm also on two team chips: the charge pump and loop filter for a ring-oscillator PLL, and the comparator plus its layout for a 10-bit SAR ADC.
+ 
+Along the way I founded the first IEEE SSCS Student Chapter at the University of Lagos, and I've been selected for a research internship at Feng Chia University in Taiwan working on machine-learning-assisted FinFET layout.
+ 
 What keeps me going is how everything fits together: logic, circuits, verification, layout, power, timing. There's always a better way to build something. I don't plan to get comfortable.`,
 };
 
 // ─── Grouped skill set (replaces flat array) ──────────────────────────────────
+// ─── Grouped skill set ────────────────────────────────────────────────────────
 export const skillGroups = [
+  {
+    category: "Analog & Mixed-Signal Design",
+    icon: "◐",
+    skills: [
+      "Full-Custom Transistor-Level Design",
+      "Relaxation Oscillators & Schmitt Triggers",
+      "Charge Pumps & Passive Loop Filters",
+      "Dynamic-Latch Comparators",
+      "Current Mirrors & Cascode Biasing",
+      "PVT Corner & Monte Carlo Analysis",
+    ],
+  },
   {
     category: "RTL & Digital Design",
     icon: "⬡",
     skills: [
-      "Verilog HDL",
-      "RTL Design & Architecture",
+      "Verilog & SystemVerilog",
+      "RTL Design & Microarchitecture",
       "Finite State Machines (FSM)",
-      "Digital Logic Design",
-      "UART / Serial Protocol Design",
+      "AHB-Lite Bus Design",
+      "QSPI Memory Controllers",
+      "UART / SPI / Serial Protocols",
     ],
   },
   {
@@ -63,10 +72,33 @@ export const skillGroups = [
     icon: "✓",
     skills: [
       "Cocotb (Python Testbenches)",
-      "Icarus Verilog (iverilog)",
-      "GTKWave Waveform Analysis",
-      "Functional Simulation",
-      "Coverage-Driven Verification",
+      "Self-Checking SystemVerilog Testbenches",
+      "Python Golden Models",
+      "Functional & Code Coverage",
+      "Gate-Level & SDF-Annotated Simulation",
+      "Icarus Verilog, Verilator, GTKWave",
+    ],
+  },
+  {
+    category: "Physical Design & EDA",
+    icon: "◈",
+    skills: [
+      "OpenLane / OpenROAD / Yosys",
+      "ngspice & Xschem",
+      "Magic, KLayout, Netgen",
+      "Static Timing Analysis",
+      "Floorplanning, Place & Route",
+      "DRC, LVS, Parasitic Extraction, GDS",
+    ],
+  },
+  {
+    category: "Process Nodes",
+    icon: "▦",
+    skills: [
+      "SkyWater SKY130",
+      "IHP SG13G2 / SG13CMOS5L (130nm)",
+      "GlobalFoundries GF180MCU",
+      "Tiny Tapeout Shuttle Flows",
     ],
   },
   {
@@ -74,22 +106,23 @@ export const skillGroups = [
     icon: "⚙",
     skills: [
       "Embedded C / C++",
+      "RISC-V Assembly & Bare-Metal Firmware",
       "STM32 (ARM Cortex-M)",
       "ESP32 (Xtensa LX6)",
+      "Raspberry Pi 4B / 5 & Hailo-8 Edge AI",
       "Peripheral Interfacing",
-      "RTOS Fundamentals",
     ],
   },
   {
-    category: "Tools & EDA",
-    icon: "◈",
+    category: "Tools & Workflow",
+    icon: "◇",
     skills: [
+      "Python (NumPy, Matplotlib)",
+      "Bash Simulation Harnesses",
       "MATLAB / Simulink",
-      "KiCAD",
-      "Altium Designer",
+      "KiCAD & Altium Designer",
       "Linux (RHEL / Ubuntu)",
       "Git & GitHub",
-      "ASIC Design Flow (Learning)",
     ],
   },
   {
@@ -104,7 +137,7 @@ export const skillGroups = [
   },
   {
     category: "Soft Skills",
-    icon: "✦", 
+    icon: "✦",
     skills: [
       "Problem Solving & Analytical Thinking",
       "Effective Communication",
@@ -114,12 +147,161 @@ export const skillGroups = [
     ],
   },
 ];
-
+ 
 // Flat array — legacy export (backward compat)
 export const skills = skillGroups.flatMap((g) => g.skills);
-
+ 
+// ─── Appointments & selections ────────────────────────────────────────────────
+// NOTE: this is a new export. Nothing renders it yet — you'll need a small
+// component, or drop it if you'd rather keep this in the About text only.
+export const appointments = [
+  {
+    title: "Research Intern, Taiwan Experience Education Program (TEEP) 2026",
+    org: "Feng Chia University — Reliable IC Development Laboratory, Taichung, Taiwan",
+    period: "Sep – Dec 2026 (scheduled)",
+    note: "Machine-learning-assisted FinFET layout, with Prof. Ching-Hwa Cheng. Offer accepted; start date pending visa processing.",
+  },
+  {
+    title: "Founding Chair, IEEE Solid-State Circuits Society Student Chapter",
+    org: "University of Lagos",
+    period: "2025 – Present",
+    note: "Started the university's first SSCS chapter. Runs RTL, ASIC and IC design workshops for engineering students.",
+  },
+  {
+    title: "Design Team Member — IEEE SSCS PICO Chipathon & Chipalooza Challenge",
+    org: "GF180MCU and IHP SG13CMOS5L",
+    period: "2026",
+    note: "Selected to two analog and mixed-signal tapeout teams.",
+  },
+];
+ 
 // ─── Projects ─────────────────────────────────────────────────────────────────
 export const projects = [
+  {
+    id: 7,
+    title: "ChronoSense-1 — Self-Calibrating NTC Temperature Sensor",
+    category: "Analog IC Design",
+    featured: true,
+    status: "In Progress",
+    timeline: "Aug – Sep 2026",   // NOTE: new field, nothing renders it yet
+    description:
+      "A full-custom analog front end in IHP SG13CMOS5L 130nm that reads a 10 kΩ NTC thermistor without needing a precision voltage reference. Two matched relaxation oscillators run side by side — one on the sensor, one on a fixed reference resistor — so supply voltage, die temperature and common-mode drift all cancel in the ratio of their counts. Target is 0.1 °C across 0–70 °C inside a 0.04 mm² slot. The first version didn't get there: a PMOS-diode input stage let the sensor pad droop from 0.49 V to 0.24 V across the range, bending the resistance-to-period curve badly enough that two-point calibration still left 24,700 ppm of residual — about 2.5 °C, well over budget. Replacing it with a fixed-voltage V-to-I converter brought that down to 934 ppm, or 0.043 °C. Built August to September 2026, against a HeiChips shuttle tapeout deadline this September.",
+    highlights: [
+      "26× accuracy improvement after re-architecting the input stage (24,700 → 934 ppm)",
+      "0.043 °C equivalent residual — 3.7× margin against the 0.1 °C target",
+      "Ratiometric dual-oscillator topology cancels supply, temperature and common-mode drift",
+      "3 candidate front ends screened across 6 sensor values and 27 PVT corners (162 runs)",
+      "Bash harness generates netlists and runs four ngspice sweeps in parallel; Python fits the transfer and reports residual in ppm",
+      "Final analog core: 14 transistors and 2 capacitors",
+      "Built to a HeiChips 2026 shuttle deadline — schematic, validation and layout inside two months",
+    ],
+    tags: ["Analog IC Design", "IHP 130nm", "HeiChips", "ngspice", "Xschem", "KLayout", "PVT Analysis", "Python", "Sensor Interface"],
+    primaryLink: "#", // TODO: repo or write-up link
+    primaryActionText: "Read the Design Notes",
+  },
+  {
+    id: 6,
+    title: "Hardware EEPROM Wear-Leveling Controller",
+    category: "ASIC Design",
+    featured: false,
+    status: "Taped Out",
+    description:
+      "A compact wear-leveling controller that extends the life of external EEPROM and flash under repeated writes. It came out of a real failure: at work I kept seeing EEPROMs die early because field calibration wrote to the same handful of addresses over and over. The controller implements the Start-Gap algorithm with a 2-round Feistel address scrambler, saturating wear counters, automatic bad-block retirement, and in-band telemetry. Verified in cocotb and taped out on SkyWater 130nm through Tiny Tapeout (TTSKY26B).",
+    highlights: [
+      "Start-Gap wear leveling — table-free, so it stays small",
+      "2-round Feistel scrambler with an LFSR-derived key, to stop targeted wear attacks",
+      "Saturating 8-bit wear counters per logical block",
+      "Automatic bad-block retirement once a block saturates",
+      "In-band telemetry for total write count and max-to-min wear skew",
+      "Full cocotb regression, then synthesis, place and route, and GDS sign-off",
+    ],
+    tags: ["Verilog", "ASIC", "Tiny Tapeout", "SkyWater 130nm", "Wear Leveling", "Start-Gap", "Feistel", "cocotb", "VLSI"],
+    primaryLink: "https://github.com/OlonadeKelvin/EEPROM_Wear",
+    primaryActionText: "View Full Project",
+    secondaryLink: "https://olonadekelvin.github.io/EEPROM_Wear/",
+    secondaryActionText: "View Design",
+  },
+  {
+    id: 5,
+    title: "Autonomous VGA Algorithmic Synthesizer ASIC",
+    category: "ASIC Design",
+    featured: false,
+    status: "Taped Out",
+    description:
+      "A generative video synthesizer built entirely from digital logic. It renders evolving mathematical fractals straight to a 640×480 VGA display with no software, no RAM and no microcontroller anywhere in the loop — the chip just wakes up and draws. Submitted to Tiny Tapeout on SkyWater 130nm (TTSKY26A) and squeezed into a single 1×1 tile, which is where most of the design effort actually went.",
+    highlights: [
+      "From-scratch VGA timing generator producing clean 640×480 at 60 Hz (25.175 MHz pixel clock)",
+      "Eight-mode fractal render engine built from bitwise XOR and shift operations",
+      "16-bit LFSR state machine mutates the visuals roughly once a second",
+      "Pixel datapath pipelined to close timing under OpenLane",
+      "Fits a single ~160 × 100 µm Tiny Tapeout tile",
+      "Self-checking SystemVerilog testbench with coverage on sync, fractal correctness and entropy",
+    ],
+    tags: ["Verilog", "SystemVerilog", "ASIC", "Tiny Tapeout", "SkyWater 130nm", "VGA", "LFSR", "Demoscene", "cocotb"],
+    primaryLink: "https://github.com/OlonadeKelvin/DemosceneTTSKY",
+    primaryActionText: "View Full Project",
+    secondaryLink: "https://olonadekelvin.github.io/DemosceneTTSKY/",
+    secondaryActionText: "View Design",
+  },
+  {
+    id: 8,
+    title: "RV32E RISC-V SoC with FIR Accelerator & External QSPI PSRAM",
+    category: "ASIC Design",
+    featured: false,
+    status: "Porting to SKY130",
+    description:
+      "A minimal RV32E system-on-chip with a custom 16-tap FIR accelerator, UART, GPIO, timer, interrupt controller and an AHB-Lite crossbar, originally built on GF180MCU and now being ported to SkyWater SKY130 for the next Tiny Tapeout shuttle, in a two-tile slot. The interesting part was the memory. On-chip SRAM was eating roughly 48,000 of 74,000 µm² of the floorplan, so I moved memory off-chip entirely: 3 KB of on-chip ROM and SRAM became 8 MB of external QSPI PSRAM, which meant writing a PSRAM controller and a hardware boot loader from scratch. It also turned a cramped Harvard machine into a flat von Neumann one.",
+    highlights: [
+      "QSPI PSRAM controller with a two-word burst read and one-deep prefetch line — cuts sequential fetch from ~60 to ~31 cycles per word",
+      "~150-gate hardware boot loader streams a length-prefixed firmware image into PSRAM, then releases the CPU — no mask ROM, so no respin risk",
+      "Flat image means startup code is just a stack-pointer write and a jump: no .data copy, no .bss zero loop",
+      "Caught a fatal bus-handshake bug in review: ready was asserted in the request cycle while every slave returns data a cycle later, so the core would have executed stale data from the very first fetch",
+      "FIR accuracy verified against a Python golden model within ±1 LSB; at least 4× faster than a software FIR on the same core",
+      "Bare-metal firmware in C and RISC-V assembly with custom startup code and linker script",
+      "Now porting GF180MCU → SKY130 for the next shuttle: re-running synthesis and macro hardening against SKY130 standard cells, re-closing timing, and re-checking the two-tile area budget — the 16×16 multiplier in the FIR datapath is the thing most likely to blow it",
+    ],
+    tags: ["Verilog", "RISC-V", "SoC", "AHB-Lite", "QSPI", "PSRAM", "FIR", "OpenLane", "Tiny Tapeout", "GF180MCU", "SkyWater 130nm"],
+    primaryLink: "#", // TODO: repo link
+    primaryActionText: "View Project",
+  },
+  {
+    id: 9,
+    title: "10-Bit SAR ADC — Dynamic-Latch Comparator & Layout",
+    category: "Mixed-Signal Design",
+    featured: false,
+    status: "In Progress",
+    description:
+      "My block on a team-built 10-bit differential SAR ADC in IHP SG13CMOS5L, intended as reusable mixed-signal IP for sensor interfaces and SoC integration. I own the dynamic-latch comparator end to end — schematic, characterization and layout — and review the neighbouring blocks during integration. The comparator has to resolve inside a 15 MHz per-bit budget so that ten bit trials plus sampling all fit in a 1 MS/s conversion window, with margin left over across corners.",
+    highlights: [
+      "Comparator characterized for decision polarity, input-referred offset, transition point and regeneration time",
+      "Noise behaviour, metastability probability and PVT robustness analysed against the per-bit timing budget",
+      "Layout drawn for differential-pair matching, common-centroid placement, guard rings and supply isolation",
+      "DRC and LVS closed in the open-source IHP flow",
+      "Cross-block review of the sampling network, differential CDAC, SAR control logic and references",
+    ],
+    tags: ["Mixed-Signal", "SAR ADC", "Comparator", "IHP 130nm", "Analog Layout", "DRC/LVS", "Chipalooza"],
+    primaryLink: "#", // TODO: repo or write-up link
+    primaryActionText: "View Project",
+  },
+  {
+    id: 10,
+    title: "Ring-Oscillator PLL — Charge Pump & Passive Loop Filter",
+    category: "Mixed-Signal Design",
+    featured: false,
+    status: "In Progress",
+    description:
+      "My two blocks on a team-designed programmable ring-oscillator PLL for GF180MCU, built through the IEEE SSCS PICO Chipathon. The charge pump is built around matched source and sink paths with cascode current-mirror biasing and programmable current control, sized from an output-voltage operating-range analysis. The loop filter comes straight out of the system parameters — charge-pump current, oscillator gain, division ratio, target bandwidth, damping. The team didn't make the 2026 shuttle deadline; both blocks are done at schematic level and we're carrying them to a later tapeout.",
+    highlights: [
+      "Charge pump targeting under 2% source-to-sink current mismatch across the usable output swing",
+      "Charge injection, clock feedthrough, static phase offset and current-source headroom all analysed",
+      "Loop filter designed to at least 55° phase margin, with stability, bandwidth and reference-spur suppression evaluated",
+      "Sensitivity to component variation checked across the design space",
+      "Layout plan uses matching, symmetry, common-centroid placement, guard rings, supply isolation and noise-aware routing",
+    ],
+    tags: ["Mixed-Signal", "PLL", "Charge Pump", "Loop Filter", "GF180MCU", "ngspice", "Chipathon"],
+    primaryLink: "#", // TODO: repo or write-up link
+    primaryActionText: "View Project",
+  },
   {
     id: 1,
     title: "Synthesizable UART TX/RX IP Core",
@@ -127,51 +309,33 @@ export const projects = [
     featured: false,
     status: "Complete",
     description:
-      "Designed a complete, production-quality UART transceiver in synthesizable Verilog HDL. Implemented configurable baud-rate generation, start/stop-bit framing, and parity logic using a clean, latch-free FSM architecture. GTKWave waveform analysis to guarantee cycle-accurate, protocol-compliant data transmission across all operating conditions and edge cases.",
+      "A UART transmitter and receiver written in synthesizable Verilog. Configurable baud-rate generation, start/stop-bit framing and parity, all built on a clean latch-free FSM. Verified in Icarus Verilog with GTKWave waveform inspection on the framing and edge cases.",
     highlights: [
-      "Fully synthesizable RTL — zero inferred latches",
-      "Configurable baud rate & parity via parameters",
-      "Clean FSM architecture — readable, maintainable RTL",
-      "Verified with Icarus Verilog + GTKWave inspection",
+      "Fully synthesizable RTL with no inferred latches",
+      "Baud rate and parity configurable through parameters",
+      "Readable FSM architecture — easy to drop into another design",
+      "Verified with Icarus Verilog and GTKWave",
     ],
     tags: ["Verilog", "RTL Design", "FSM", "GTKWave", "Icarus Verilog", "UART"],
     primaryLink: "https://github.com/OlonadeKelvin/Synthesizable-UART-Transmitter-Receiver-IP-Core-",
     primaryActionText: "View RTL Source",
   },
   {
-    id: 2,
-    title: "RTD-Based Cardiac Arrhythmia Detector",
-    category: "Computational Electronics",
-    featured: false,
-    status: "In Progress",
-    description:
-      "Engineering a novel architecture leveraging the negative differential resistance (NDR) of InGaAs/AlAs heterostructure resonant tunneling diodes for ultra-high-speed cardiac anomaly detection — exploiting quantum tunneling to achieve switching speeds beyond conventional CMOS limits.",
-    highlights: [
-      "InGaAs/AlAs heterostructure material system",
-      "NDR-based bistable switching logic",
-      "Targeting sub-picosecond detection latency",
-      "Novel quantum device physics application",
-    ],
-    tags: ["Device Physics", "RTD", "InGaAs/AlAs", "Simulation", "Quantum Devices"],
-    primaryLink: "#",
-    primaryActionText: "Read Abstract",
-  },
-  {
     id: 3,
-    title: "Thermal Analysis of a Multi-Core Processor",
+    title: "Thermal Analysis of a Multi-Core Processor Die",
     category: "Simulation",
     featured: false,
     status: "Complete",
     description:
-      "Simulated transient 2D heat conduction in a chip with two switching heat-generating cores to study thermal crosstalk and temperature distribution. Implemented explicit Euler time integration with Dirichlet boundary conditions on a uniform grid; included real-time 2D heatmap and 3D surface visualization. Model is fully parameterized (chip size, grid resolution, material properties, heat flux) and directly applicable to thermal-aware physical design in VLSI.",
+      "A transient 2D heat-conduction model of a die with two switching cores, written to look at thermal crosstalk and how temperature actually distributes across the chip. Explicit Euler time integration with Dirichlet boundary conditions on a uniform grid, plus live 2D heatmap and 3D surface output. Everything is parameterized — chip size, grid resolution, material properties, heat flux — so it can be pointed at a different floorplan without rewriting the solver.",
     highlights: [
-          "Fully parameterized simulation (chip size, grid resolution, material properties, heat flux)",
-    "Explicit Euler time integration with Dirichlet boundary conditions",
-    "Real‑time 2D heatmap and 3D surface visualization",
-    "Models thermal crosstalk between switching cores",
-    "Directly applicable to thermal‑aware VLSI physical design"
+      "Fully parameterized: chip size, grid resolution, material properties, heat flux",
+      "Explicit Euler time integration with Dirichlet boundary conditions",
+      "Real-time 2D heatmap and 3D surface visualization",
+      "Models thermal crosstalk between two switching cores",
+      "Applicable to thermal-aware VLSI physical design",
     ],
-    tags: ["Thermal Simulation", "2D Heat Conduction", "Explicit Euler", "MATLAB", "Thermal Crosstalk", "VLSI Physical Design", "Parameterized Modeling"],
+    tags: ["Thermal Simulation", "2D Heat Conduction", "Explicit Euler", "MATLAB", "Python", "VLSI Physical Design"],
     primaryLink: "https://github.com/OlonadeKelvin/Multicore-Processor-Die",
     primaryActionText: "View Design",
   },
@@ -182,59 +346,34 @@ export const projects = [
     featured: false,
     status: "Complete",
     description:
-      "Engineered a deterministic environmental monitoring system built entirely from configurable logic blocks — no microcontroller, no firmware, zero software failure vectors. All sensing, threshold comparison, and alert logic lives in pure combinational and sequential hardware, guaranteeing real-time deterministic response.",
+      "An environmental monitor with no microcontroller and no firmware in it at all. Sensing, threshold comparison and alert logic live entirely in configurable logic blocks and core-independent peripherals, so the response is deterministic and there's no software layer left to hang, corrupt or need reflashing in the field.",
     highlights: [
-      "Zero firmware — pure hardware implementation",
-      "Deterministic, real-time sensor response",
-      "Eliminates all software failure modes",
-      "Discrete configurable logic blocks only",
+      "No firmware — sensing and alerting done in hardware",
+      "Deterministic, real-time response to threshold crossings",
+      "Removes the software failure modes entirely",
+      "Built on configurable logic blocks and core-independent peripherals",
     ],
-    tags: ["Digital Logic", "Hardware Design", "Sensors", "Deterministic", "Combinational Logic"],
+    tags: ["Digital Logic", "Hardware Design", "PIC16F", "Sensors", "Combinational Logic"],
     primaryLink: "https://youtube.com/shorts/SLURRuQGh4o?si=Jw9fgmtipO57srMM",
     primaryActionText: "View Demo",
   },
-    {
-    id: 5,
-    title: "Autonomous VGA Algorithmic Synthesizer ASIC",
-    category: "ASIC Design",
-    featured: false,   // changed from true – new project is featured now
-    status: "Complete",
-    description:
-      "Pushed the limits of pure hardware creativity by designing and submitting a fully autonomous generative video synthesizer to Tiny Tapeout SKU26A (SkyWater 130nm). This compact ASIC renders evolving mathematical fractals in real-time directly to a 640x480 VGA display using zero software, zero RAM, and zero microcontrollers, only raw digital logic.",
-    highlights: [
-      "SkyWater 130nm submission via Tiny Tapeout (SKU26A)",
-      "From-scratch VGA timing generator delivering clean 640x480@60Hz",
-      "Purely combinatorial 8-mode fractal render engine built on bitwise XOR/shift magic",
-      "16-bit LFSR state machine for autonomous visual mutation every ~1 second",
-      "Extreme area optimization — squeezed into a single 1×1 Tiny Tapeout tile"
-    ],
-    tags: ["Verilog", "ASIC", "Tiny Tapeout", "SkyWater 130nm", "VGA", "Combinatorial Logic", "LFSR", "Demoscene", "Generative Art", "cocotb"],
-    primaryLink: "https://github.com/OlonadeKelvin/DemosceneTTSKY",
-    primaryActionText: "View Full Project",
-    secondaryLink: "https://olonadekelvin.github.io/DemosceneTTSKY/",
-    secondaryActionText: "View Design"
-  },
   {
-    id: 6,
-    title: "Hardware EEPROM Wear‑Leveling Controller",
-    category: "ASIC Design",
-    featured: true,      // new featured project
-    status: "Complete",
+    id: 2,
+    title: "RTD-Based Cardiac Arrhythmia Detector",
+    category: "Device Physics",
+    featured: false,
+    status: "Exploratory",
     description:
-      "A tiny, attack‑resistant wear‑leveling controller that dramatically extends the lifetime of external EEPROM and flash memories. Implements the Start‑Gap algorithm (used in commercial 3D‑XPoint) with a 2‑round Feistel address scrambler, saturating wear counters, automatic bad‑block retirement, and in‑band telemetry. Passed all cocotb tests and successfully taped out on SkyWater 130nm via Tiny Tapeout (SKY26a).",
+      "An open question I've been chasing: can the negative differential resistance of an InGaAs/AlAs resonant tunneling diode be used as the switching element in a cardiac anomaly detector? RTDs switch on quantum tunneling rather than carrier transit, which is what makes the speed interesting. Still early — this is device-physics reading and simulation, not a built system.",
     highlights: [
-      "Start‑Gap wear leveling – proven, table‑free algorithm",
-      "2‑round Feistel scrambler + LFSR key – defeats targeted wear attacks",
-      "Automatic bad‑block retirement – saturated blocks are skipped",
-      "Saturating 8‑bit wear counters per logical block – ultra‑compact",
-      "In‑band telemetry – read max‑min skew or total write count",
-      "Fully synthesizable, passes all simulation tests",
-      "Successful GDS generation – placed & routed on SKY130"
+      "InGaAs/AlAs heterostructure material system",
+      "NDR-based bistable switching as the detection mechanism",
+      "Exploring what detection latency the device physics actually allows",
+      "Early-stage: simulation and literature work only",
     ],
-    tags: ["Verilog", "ASIC", "Tiny Tapeout", "SkyWater 130nm", "Wear Leveling", "Start‑Gap", "Feistel", "RTL Design", "cocotb", "VLSI"],
-    primaryLink: "https://github.com/OlonadeKelvin/EEPROM_Wear",
-    primaryActionText: "View Full Project",
-    secondaryLink: "https://olonadekelvin.github.io/EEPROM_Wear/",
-    secondaryActionText: "View Design"
-  }
+    tags: ["Device Physics", "RTD", "InGaAs/AlAs", "Simulation", "Quantum Devices"],
+    primaryLink: "#",
+    primaryActionText: "Read Abstract",
+  },
 ];
+
