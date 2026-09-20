@@ -171,8 +171,10 @@ export const projects = [
       "Built to a HeiChips 2026 shuttle deadline, schematic, validation and layout inside two months",
     ],
     tags: ["Analog IC Design", "IHP 130nm", "HeiChips", "ngspice", "Xschem", "KLayout", "PVT Analysis", "Python", "Sensor Interface"],
-    primaryLink: "https://github.com/OlonadeKelvin/ChronoSense-1",
+    primaryLink: "#",
     primaryActionText: "Read the Design Notes",
+    secondaryLink: "https://github.com/OlonadeKelvin/ChronoSense-1",
+    secondaryActionText: "View Design",
   },
   {
     id: 6,
