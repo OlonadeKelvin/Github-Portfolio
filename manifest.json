@@ -1,7 +1,6 @@
 {
-  "short_name": "K. Olonade",
-  "name": "Kelvin Olonade — Portfolio",
-  "description": "Portfolio of Kelvin Olonade, RTL Design & Verification Engineer.",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",
@@ -21,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#0A2540",
-  "background_color": "#0A2540"
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
 }
