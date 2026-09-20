@@ -208,17 +208,10 @@ function About() {
             <div className="about-card">
               <p className="about-card__label">Currently</p>
               <ul className="about-card__list">
+      
                 <li>
                   <span aria-hidden="true">◈</span>
-                  Learning full ASIC flow (RTL → STA)
-                </li>
-                <li>
-                  <span aria-hidden="true">◈</span>
-                  Founding IEEE SSCS Chapter @ UniLag
-                </li>
-                <li>
-                  <span aria-hidden="true">◈</span>
-                  Advancing RTD quantum device research
+                  Seeking Internship and Research in Mixed Signals IC Design
                 </li>
               </ul>
             </div>
