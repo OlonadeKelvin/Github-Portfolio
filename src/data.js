@@ -3,7 +3,7 @@
 
 export const personalInfo = {
   name: "Kelvin Olonade",
-  role: "Mixed-Signal & Digital IC Designer",
+  role: "Mixed-Signal IC Designer",
   usp: "From breadboards to GDS. Two chips through the full open-source flow on SkyWater 130nm, and now drawing transistors in IHP 130nm and GF180MCU.",
   location: "Lagos, Nigeria",
   university: "University of Lagos",
@@ -40,8 +40,6 @@ Along the way I founded the first IEEE SSCS Student Chapter at the University of
 What keeps me going is how everything fits together: logic, circuits, verification, layout, power, timing. There's always a better way to build something. I don't plan to get comfortable.`,
 };
 
-// ─── Grouped skill set (replaces flat array) ──────────────────────────────────
-// ─── Grouped skill set ────────────────────────────────────────────────────────
 export const skillGroups = [
   {
     category: "Analog & Mixed-Signal Design",
@@ -151,29 +149,6 @@ export const skillGroups = [
 // Flat array — legacy export (backward compat)
 export const skills = skillGroups.flatMap((g) => g.skills);
  
-// ─── Appointments & selections ────────────────────────────────────────────────
-// NOTE: this is a new export. Nothing renders it yet — you'll need a small
-// component, or drop it if you'd rather keep this in the About text only.
-export const appointments = [
-  {
-    title: "Research Intern, Taiwan Experience Education Program (TEEP) 2026",
-    org: "Feng Chia University — Reliable IC Development Laboratory, Taichung, Taiwan",
-    period: "Sep – Dec 2026 (scheduled)",
-    note: "Machine-learning-assisted FinFET layout, with Prof. Ching-Hwa Cheng. Offer accepted; start date pending visa processing.",
-  },
-  {
-    title: "Founding Chair, IEEE Solid-State Circuits Society Student Chapter",
-    org: "University of Lagos",
-    period: "2025 – Present",
-    note: "Started the university's first SSCS chapter. Runs RTL, ASIC and IC design workshops for engineering students.",
-  },
-  {
-    title: "Design Team Member — IEEE SSCS PICO Chipathon & Chipalooza Challenge",
-    org: "GF180MCU and IHP SG13CMOS5L",
-    period: "2026",
-    note: "Selected to two analog and mixed-signal tapeout teams.",
-  },
-];
  
 // ─── Projects ─────────────────────────────────────────────────────────────────
 export const projects = [
@@ -185,7 +160,7 @@ export const projects = [
     status: "In Progress",
     timeline: "Aug – Sep 2026",   // NOTE: new field, nothing renders it yet
     description:
-      "A full-custom analog front end in IHP SG13CMOS5L 130nm that reads a 10 kΩ NTC thermistor without needing a precision voltage reference. Two matched relaxation oscillators run side by side — one on the sensor, one on a fixed reference resistor — so supply voltage, die temperature and common-mode drift all cancel in the ratio of their counts. Target is 0.1 °C across 0–70 °C inside a 0.04 mm² slot. The first version didn't get there: a PMOS-diode input stage let the sensor pad droop from 0.49 V to 0.24 V across the range, bending the resistance-to-period curve badly enough that two-point calibration still left 24,700 ppm of residual — about 2.5 °C, well over budget. Replacing it with a fixed-voltage V-to-I converter brought that down to 934 ppm, or 0.043 °C. Built August to September 2026, against a HeiChips shuttle tapeout deadline this September.",
+      "A full-custom analog front end in IHP SG13CMOS5L 130nm that reads a 10 kΩ NTC thermistor without needing a precision voltage reference. Two matched relaxation oscillators run side by side, one on the sensor, one on a fixed reference resistor, so supply voltage, die temperature and common-mode drift all cancel in the ratio of their counts. Target is 0.1 °C across 0–70 °C inside a 0.04 mm² slot. The first version didn't get there: a PMOS-diode input stage let the sensor pad droop from 0.49 V to 0.24 V across the range, bending the resistance-to-period curve badly enough that two-point calibration still left 24,700 ppm of residual, about 2.5 °C, well over budget. Replacing it with a fixed-voltage V-to-I converter brought that down to 934 ppm, or 0.043 °C. Built August to September 2026, against a HeiChips shuttle tapeout deadline September 2026.",
     highlights: [
       "26× accuracy improvement after re-architecting the input stage (24,700 → 934 ppm)",
       "0.043 °C equivalent residual — 3.7× margin against the 0.1 °C target",
