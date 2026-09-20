@@ -168,10 +168,10 @@ export const projects = [
       "3 candidate front ends screened across 6 sensor values and 27 PVT corners (162 runs)",
       "Bash harness generates netlists and runs four ngspice sweeps in parallel; Python fits the transfer and reports residual in ppm",
       "Final analog core: 14 transistors and 2 capacitors",
-      "Built to a HeiChips 2026 shuttle deadline — schematic, validation and layout inside two months",
+      "Built to a HeiChips 2026 shuttle deadline, schematic, validation and layout inside two months",
     ],
     tags: ["Analog IC Design", "IHP 130nm", "HeiChips", "ngspice", "Xschem", "KLayout", "PVT Analysis", "Python", "Sensor Interface"],
-    primaryLink: "#", // TODO: repo or write-up link
+    primaryLink: "https://github.com/OlonadeKelvin/ChronoSense-1",
     primaryActionText: "Read the Design Notes",
   },
   {
@@ -183,7 +183,7 @@ export const projects = [
     description:
       "A compact wear-leveling controller that extends the life of external EEPROM and flash under repeated writes. It came out of a real failure: at work I kept seeing EEPROMs die early because field calibration wrote to the same handful of addresses over and over. The controller implements the Start-Gap algorithm with a 2-round Feistel address scrambler, saturating wear counters, automatic bad-block retirement, and in-band telemetry. Verified in cocotb and taped out on SkyWater 130nm through Tiny Tapeout (TTSKY26B).",
     highlights: [
-      "Start-Gap wear leveling — table-free, so it stays small",
+      "Start-Gap wear leveling, table-free, so it stays small",
       "2-round Feistel scrambler with an LFSR-derived key, to stop targeted wear attacks",
       "Saturating 8-bit wear counters per logical block",
       "Automatic bad-block retirement once a block saturates",
@@ -203,7 +203,7 @@ export const projects = [
     featured: false,
     status: "Taped Out",
     description:
-      "A generative video synthesizer built entirely from digital logic. It renders evolving mathematical fractals straight to a 640×480 VGA display with no software, no RAM and no microcontroller anywhere in the loop — the chip just wakes up and draws. Submitted to Tiny Tapeout on SkyWater 130nm (TTSKY26A) and squeezed into a single 1×1 tile, which is where most of the design effort actually went.",
+      "A generative video synthesizer built entirely from digital logic. It renders evolving mathematical fractals straight to a 640×480 VGA display with no software, no RAM and no microcontroller anywhere in the loop, the chip just wakes up and draws. Submitted to Tiny Tapeout on SkyWater 130nm (TTSKY26A) and squeezed into a single 1×1 tile, which is where most of the design effort actually went.",
     highlights: [
       "From-scratch VGA timing generator producing clean 640×480 at 60 Hz (25.175 MHz pixel clock)",
       "Eight-mode fractal render engine built from bitwise XOR and shift operations",
@@ -227,8 +227,8 @@ export const projects = [
     description:
       "A minimal RV32E system-on-chip with a custom 16-tap FIR accelerator, UART, GPIO, timer, interrupt controller and an AHB-Lite crossbar, originally built on GF180MCU and now being ported to SkyWater SKY130 for the next Tiny Tapeout shuttle, in a two-tile slot. The interesting part was the memory. On-chip SRAM was eating roughly 48,000 of 74,000 µm² of the floorplan, so I moved memory off-chip entirely: 3 KB of on-chip ROM and SRAM became 8 MB of external QSPI PSRAM, which meant writing a PSRAM controller and a hardware boot loader from scratch. It also turned a cramped Harvard machine into a flat von Neumann one.",
     highlights: [
-      "QSPI PSRAM controller with a two-word burst read and one-deep prefetch line — cuts sequential fetch from ~60 to ~31 cycles per word",
-      "~150-gate hardware boot loader streams a length-prefixed firmware image into PSRAM, then releases the CPU — no mask ROM, so no respin risk",
+      "QSPI PSRAM controller with a two-word burst read and one-deep prefetch line, cuts sequential fetch from ~60 to ~31 cycles per word",
+      "~150-gate hardware boot loader streams a length-prefixed firmware image into PSRAM, then releases the CPU, no mask ROM, so no respin risk",
       "Flat image means startup code is just a stack-pointer write and a jump: no .data copy, no .bss zero loop",
       "Caught a fatal bus-handshake bug in review: ready was asserted in the request cycle while every slave returns data a cycle later, so the core would have executed stale data from the very first fetch",
       "FIR accuracy verified against a Python golden model within ±1 LSB; at least 4× faster than a software FIR on the same core",
@@ -236,7 +236,7 @@ export const projects = [
       "Now porting GF180MCU → SKY130 for the next shuttle: re-running synthesis and macro hardening against SKY130 standard cells, re-closing timing, and re-checking the two-tile area budget — the 16×16 multiplier in the FIR datapath is the thing most likely to blow it",
     ],
     tags: ["Verilog", "RISC-V", "SoC", "AHB-Lite", "QSPI", "PSRAM", "FIR", "OpenLane", "Tiny Tapeout", "GF180MCU", "SkyWater 130nm"],
-    primaryLink: "#", // TODO: repo link
+    primaryLink: "https://github.com/OlonadeKelvin/tt_um_tiny_rv32e_fir",
     primaryActionText: "View Project",
   },
   {
@@ -246,7 +246,7 @@ export const projects = [
     featured: false,
     status: "In Progress",
     description:
-      "My block on a team-built 10-bit differential SAR ADC in IHP SG13CMOS5L, intended as reusable mixed-signal IP for sensor interfaces and SoC integration. I own the dynamic-latch comparator end to end — schematic, characterization and layout — and review the neighbouring blocks during integration. The comparator has to resolve inside a 15 MHz per-bit budget so that ten bit trials plus sampling all fit in a 1 MS/s conversion window, with margin left over across corners.",
+      "My block on a team-built 10-bit differential SAR ADC in IHP SG13CMOS5L, intended as reusable mixed-signal IP for sensor interfaces and SoC integration. I own the dynamic-latch comparator end to end, schematic, characterization and layout, and review the neighbouring blocks during integration. The comparator has to resolve inside a 15 MHz per-bit budget so that ten bit trials plus sampling all fit in a 1 MS/s conversion window, with margin left over across corners.",
     highlights: [
       "Comparator characterized for decision polarity, input-referred offset, transition point and regeneration time",
       "Noise behaviour, metastability probability and PVT robustness analysed against the per-bit timing budget",
@@ -255,7 +255,7 @@ export const projects = [
       "Cross-block review of the sampling network, differential CDAC, SAR control logic and references",
     ],
     tags: ["Mixed-Signal", "SAR ADC", "Comparator", "IHP 130nm", "Analog Layout", "DRC/LVS", "Chipalooza"],
-    primaryLink: "#", // TODO: repo or write-up link
+    primaryLink: "https://github.com/OlonadeKelvin/SAR_ADC",
     primaryActionText: "View Project",
   },
   {
@@ -274,7 +274,7 @@ export const projects = [
       "Layout plan uses matching, symmetry, common-centroid placement, guard rings, supply isolation and noise-aware routing",
     ],
     tags: ["Mixed-Signal", "PLL", "Charge Pump", "Loop Filter", "GF180MCU", "ngspice", "Chipathon"],
-    primaryLink: "#", // TODO: repo or write-up link
+    primaryLink: "https://github.com/OlonadeKelvin/-ro-pll-gf180",
     primaryActionText: "View Project",
   },
   {
